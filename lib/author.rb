@@ -1,5 +1,6 @@
+require 'pry'
 class Author
-  attr_accessor :name , :author , :posts
+  attr_accessor :name , :author , :posts , :title
 
   @@post_count = 0
 
@@ -14,12 +15,12 @@ class Author
     @@post_count += 1
   end
 
-  def add_post_by_title(post)
-    post = Post.new(post)
+  def add_post_by_title(post_title)
+    post = Post.new(post_title)
+    post.title = post_title
+    post.author = self
     @posts << post
     @@post_count += 1
-    post.title = self
-    post.post
   end
 
   def self.post_count
