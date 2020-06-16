@@ -52,6 +52,7 @@ describe 'Song' do
     end
 
     it 'returns nil if the song does not have an artist' do
+      puts("Expecting to equal nil:  #{song.artist_name}")
       expect(song.artist_name).to eq nil
     end
   end
